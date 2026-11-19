@@ -82,27 +82,23 @@ function parseDateString(dateStr: string): number {
 }
 
 async function fetchFirmwareDirectory(): Promise<FirmwareDirectory> {
+    // DelfínOS: la lista de firmwares viene de un archivo local (apunta a los Releases
+    // de DelfínOS en GitHub), no del servidor de Momentum. Para publicar una versión nueva,
+    // edita _data/delfinos-directory.json con la nueva URL y sha256.
     try {
-        const data: FirmwareDirectory = await ofetch(
-            "https://up.momentum-fw.dev/firmware/directory.json",
-            {
-                timeout: 15000,
-                headers: {
-                    "User-Agent": "Momentum-Firmware-Website",
-                },
-            },
-        );
+        const raw = await fs.readFile(join(DIR_DATA, "delfinos-directory.json"), "utf8");
+        const data: FirmwareDirectory = JSON.parse(raw);
 
         if (!data || !data.channels || !Array.isArray(data.channels)) {
             throw new Error("❌ Invalid firmware directory structure received");
         }
 
         console.log(
-            `  Successfully fetched firmware directory with ${data.channels.length} channels`,
+            `  Loaded DelfínOS firmware directory with ${data.channels.length} channels`,
         );
         return data;
     } catch (error) {
-        console.error("❌  Failed to fetch firmware directory:", error);
+        console.error("❌  Failed to load DelfínOS firmware directory:", error);
         throw error;
     }
 }
@@ -624,21 +620,25 @@ export const getReleaseByVersion = (version: string) => {
 }
 
 export async function fetchReleases() {
-    const { mainlineItems, devbuildItems } = await getReleaseAndDevbuilds();
+    // DelfínOS: la lista sale solo del directory local (sin raspar Momentum).
+    // Canal principal = español; segundo canal = inglés.
+    const directory = await fetchFirmwareDirectory();
+    const es = directory.channels.find((c) => c.id === "release");
+    const en = directory.channels.find((c) => c.id === "release-en");
 
-    if (!mainlineItems || !Array.isArray(mainlineItems) || mainlineItems.length === 0) {
-        throw new Error("❌ No mainline items received from getReleaseAndDevbuilds");
+    const mainlineItems: ReleaseItem[] = es?.versions ?? [];
+    const branchItems: ReleaseItem[] = (en?.versions ?? []).map((v) => ({
+        ...v,
+        branch: "English",
+    }));
+
+    if (mainlineItems.length === 0) {
+        throw new Error("❌ El directory de DelfínOS no tiene versiones en el canal 'release'");
     }
-    if (!devbuildItems || !Array.isArray(devbuildItems)) {
-        throw new Error("❌ Invalid devbuild items received from getReleaseAndDevbuilds");
-    }
 
-    console.log(`  Received ${mainlineItems.length} mainline releases`);
-    console.log(`  Received ${devbuildItems.length} devbuild items`);
+    console.log(`  DelfínOS: ${mainlineItems.length} versiones (es), ${branchItems.length} (en)`);
 
-    const { branchItems } = await getExtraBranches(["development", "release"]);
+    await updateReleases(mainlineItems, [], branchItems);
 
-    await updateReleases(mainlineItems, devbuildItems, branchItems);
-
-    console.log("Releases generated successfully");
+    console.log("Releases de DelfínOS generados");
 }

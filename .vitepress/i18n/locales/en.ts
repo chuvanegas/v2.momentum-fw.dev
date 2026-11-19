@@ -102,7 +102,7 @@ const messages: MessageSchema = {
     month_dec_short: "Dec",
 
     config_label: "English",
-    config_title: "Momentum Firmware",
+    config_title: "DelfínOS",
     config_description: "Feature-rich, stable and customizable firmware for Flipper Zero",
     config_outline_label: "ON THIS PAGE",
     config_dark_mode_switch_label: "Appearance",
@@ -142,7 +142,7 @@ const messages: MessageSchema = {
     aside_discord_alerts: "Discord Alerts",
 
     releases_title: "Releases",
-    releases_description: "Mainline releases and dev builds of Momentum Firmware",
+    releases_description: "Versiones de DelfínOS",
     releases_description_mobile: "Mainline releases and dev builds",
     releases_mainline: "Mainline",
     releases_devbuild: "Dev build",
@@ -219,7 +219,7 @@ const messages: MessageSchema = {
     connection_disconnect: "Disconnect",
     connection_unable_to_extract: "Unable to flash asset packs",
     connection_unable_to_extract_desc:
-        "{{version}} is unable to flash asset packs. Update to a compatible Momentum <a href='{{url}}'>release</a>.",
+        "{{version}} is unable to flash asset packs. Update to a compatible DelfínOS <a href='{{url}}'>release</a>.",
     connection_serial_busy: "Serial port is busy!",
     connection_rpc_failed: "RPC connection failed",
     connection_device_not_found: "Device not found",
@@ -253,8 +253,8 @@ const messages: MessageSchema = {
     update_stage_flipper_updating: "Flipper is now updating...",
     update_stage_error: "Error...",
 
-    updater_title: "Web Updater",
-    updater_description: "Update your Flipper Zero with the latest Momentum firmware",
+    updater_title: "Instalar DelfínOS",
+    updater_description: "Instala DelfínOS en tu Flipper Zero",
     updater_device_info: "Device Info",
     updater_parsed_tab: "Parsed",
     updater_raw_tab: "Raw",
@@ -313,7 +313,7 @@ const messages: MessageSchema = {
     updater_select_firmware: "Select Firmware",
     updater_or_install_from_file: "Or install from file",
     updater_install_from_file_tooltip:
-        "We recommend only flashing firmware from verified sources. You can get Momentum releases from <a href='{{url}}' target='_blank' rel='noopener' class='text-vp-brand-1 hover:text-vp-brand-2 here-text underline transition-colors duration-100 font-medium'>{{text}}</a>.",
+        "We recommend only flashing firmware from verified sources. You can get DelfínOS releases from <a href='{{url}}' target='_blank' rel='noopener' class='text-vp-brand-1 hover:text-vp-brand-2 here-text underline transition-colors duration-100 font-medium'>{{text}}</a>.",
     updater_change_button: "Change",
     updater_remove_button: "Remove",
     updater_drop_file_here: "Drop .tgz here...",

@@ -1,17 +1,17 @@
 ---
 layout: page
-title: Web Updater
-description: "Update your Flipper Zero to the latest Momentum Firmware"
+title: Instalar DelfínOS
+description: "Instala DelfínOS en tu Flipper Zero"
 head:
     - - meta
       - name: "description"
-        content: "Update your Flipper Zero to the latest Momentum Firmware"
+        content: "Instala DelfínOS en tu Flipper Zero"
     - - meta
       - property: "og:title"
-        content: "Web Updater | Momentum Firmware"
+        content: "Instalar DelfínOS"
     - - meta
       - property: "og:description"
-        content: "Update your Flipper Zero to the latest Momentum Firmware"
+        content: "Instala DelfínOS en tu Flipper Zero"
     - - meta
       - property: "og:image"
         content: "https://momentum-fw.dev/og.png"
@@ -20,10 +20,10 @@ head:
         content: "https://momentum-fw.dev/update"
     - - meta
       - name: "twitter:title"
-        content: "Web Updater | Momentum Firmware"
+        content: "Instalar DelfínOS"
     - - meta
       - name: "twitter:description"
-        content: "Update your Flipper Zero to the latest Momentum Firmware"
+        content: "Instala DelfínOS en tu Flipper Zero"
     - - meta
       - name: "twitter:image"
         content: "https://momentum-fw.dev/og.png"

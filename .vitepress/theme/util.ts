@@ -302,13 +302,12 @@ export const getFirmwareDownloadUrl = (release: ReleaseItem): string | null => {
     if (!release.files) return null;
 
     for (const file of release.files) {
-        // Handle branch files (url, type)
+        // Handle branch files (url, type) — DelfínOS: acepta cualquier .tgz de actualización
         if (
             "url" in file &&
             file.url &&
             "type" in file &&
             file.type === "update_tgz" &&
-            file.url.includes("update-mntm-") &&
             file.url.endsWith(".tgz")
         ) {
             return file.url;
