@@ -32,6 +32,7 @@ _data/*
 !_data/
 !_data/changelogs/
 !_data/messages.ts
+!_data/delfinos-directory.json
 
 .vitepress/config/*
 !.vitepress/config/

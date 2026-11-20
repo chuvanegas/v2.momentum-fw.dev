@@ -1,0 +1,46 @@
+{
+  "channels": [
+    {
+      "id": "release",
+      "title": "DelfínOS",
+      "description": "DelfínOS estable, en español. Base: Momentum mntm-012.",
+      "versions": [
+        {
+          "version": "0.1",
+          "date": "2026-11-19",
+          "timestamp": 1795046400,
+          "description": "Primera versión de DelfínOS, en español.",
+          "files": [
+            {
+              "url": "https://github.com/chuvanegas/Delf-nOS/releases/download/v0.1/delfinos-0.1-es.tgz",
+              "target": "f7",
+              "type": "update_tgz",
+              "sha256": "e009fd0dc325ebeeb07ed0998e72b46ba6e84aadcb1ba1504d6c4a3122d91e70"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release-en",
+      "title": "DelfinOS (English)",
+      "description": "DelfinOS stable, in English. Base: Momentum mntm-012.",
+      "versions": [
+        {
+          "version": "0.1",
+          "date": "2026-11-19",
+          "timestamp": 1795046400,
+          "description": "First DelfinOS release, in English.",
+          "files": [
+            {
+              "url": "https://github.com/chuvanegas/Delf-nOS/releases/download/v0.1/delfinos-0.1-en.tgz",
+              "target": "f7",
+              "type": "update_tgz",
+              "sha256": "dbd3d7ae1b2eadf745408b36277595d55e187cce52af42d71c14d9ad90ccd0be"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
