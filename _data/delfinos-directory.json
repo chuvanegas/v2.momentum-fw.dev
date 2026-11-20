@@ -3,13 +3,27 @@
     {
       "id": "release",
       "title": "DelfínOS",
-      "description": "DelfínOS estable, en español. Base: Momentum mntm-012.",
+      "description": "DelfínOS estable, en español. Base: RogueMaster (rama 420), con apps traducidas.",
       "versions": [
+        {
+          "version": "0.2",
+          "date": "2026-11-20",
+          "timestamp": 1795132800,
+          "description": "Sistema y apps en español. Base RogueMaster con todas sus apps; sin quitar ninguna.",
+          "files": [
+            {
+              "url": "https://github.com/chuvanegas/Delf-nOS/releases/download/v0.2/delfinos-0.2-es.tgz",
+              "target": "f7",
+              "type": "update_tgz",
+              "sha256": "21d042db0723fbbdb8afa8e0b18bd20db8a9bfb4eade3282866f1a9e69c36c8f"
+            }
+          ]
+        },
         {
           "version": "0.1",
           "date": "2026-11-19",
           "timestamp": 1795046400,
-          "description": "Primera versión de DelfínOS, en español.",
+          "description": "Primera versión de DelfínOS, en español (sistema; apps en inglés).",
           "files": [
             {
               "url": "https://github.com/chuvanegas/Delf-nOS/releases/download/v0.1/delfinos-0.1-es.tgz",
@@ -24,8 +38,22 @@
     {
       "id": "release-en",
       "title": "DelfinOS (English)",
-      "description": "DelfinOS stable, in English. Base: Momentum mntm-012.",
+      "description": "DelfinOS stable, in English. Base: RogueMaster (branch 420).",
       "versions": [
+        {
+          "version": "0.2",
+          "date": "2026-11-20",
+          "timestamp": 1795132800,
+          "description": "RogueMaster base in English, with its full app set.",
+          "files": [
+            {
+              "url": "https://github.com/chuvanegas/Delf-nOS/releases/download/v0.2/delfinos-0.2-en.tgz",
+              "target": "f7",
+              "type": "update_tgz",
+              "sha256": "07437cf34af40bd8b786f14fb18ed52baa33a58188d926dce75a11f162c2ab6f"
+            }
+          ]
+        },
         {
           "version": "0.1",
           "date": "2026-11-19",
